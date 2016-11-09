@@ -13,7 +13,7 @@ public class ChristmasWorld extends World
     private int row;
     private int column;
     private int timeCounter;
-    private GreenfootSound molePopUp;
+   
     
     private String[] coordinates;
     
@@ -31,7 +31,7 @@ public class ChristmasWorld extends World
     {    
         
         // calling the other constructor with gameStarted = false.
-        this(false);
+        this(false); 
     }
     
     public void act()
@@ -43,7 +43,6 @@ public class ChristmasWorld extends World
         {
             Zombie zombie = new Zombie();
             spawnMole(zombie);
-            molePopUp.play();
             //timeCounterZombie = 0;
         }   
         
@@ -51,14 +50,14 @@ public class ChristmasWorld extends World
         {
             GoldenZombie gZombie = new GoldenZombie();
             spawnMole(gZombie);
-            molePopUp.play();
+            
         }
         
         if((timeCounter % elfSpawnTime) == 0)
         {
-           Elf elf = new Elf();
-           spawnMole(elf);
-           molePopUp.play();
+            Elf elf = new Elf();
+            spawnMole(elf);
+           
         }
         
     }
@@ -71,7 +70,7 @@ public class ChristmasWorld extends World
         
         // Create a new world with 500x450 cells with a cell size of 1x1 pixels.
         super(500, 450, 1);  
-        molePopUp = new GreenfootSound("MolePopUp.wav");    
+            
         if (gameStarted)
         {
             initialize();
