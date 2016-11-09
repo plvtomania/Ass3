@@ -14,6 +14,7 @@ public class ChristmasWorld extends World
     private int row;
     private int column;
     private int timeCounter;
+    private GreenfootSound molePopUp;
     
     
     private String[] coordinates;
@@ -51,6 +52,7 @@ public class ChristmasWorld extends World
         {
             Zombie zombie = new Zombie();
             spawnMole(zombie);
+            molePopUp.play();
             //timeCounterZombie = 0;
         }   
         
@@ -58,14 +60,14 @@ public class ChristmasWorld extends World
         {
             GoldenZombie gZombie = new GoldenZombie();
             spawnMole(gZombie);
-            
+            molePopUp.play();
         }
         
         if((timeCounter % elfSpawnTime) == 0)
         {
             Elf elf = new Elf();
             spawnMole(elf);
-           
+            molePopUp.play();
         }
         
         showText("Time " + game.getSeconds(), 60, 50);
@@ -84,6 +86,7 @@ public class ChristmasWorld extends World
         {
             initialize();
             setPaintOrder(Hammer.class, Mole.class);
+            molePopUp = new GreenfootSound("MolePopUp.wav");
             //addObject.zombie;
         }
         else
