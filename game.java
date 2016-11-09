@@ -7,8 +7,8 @@
 public class Game  
 {
     private int seconds;
-    private int timeCounter;
-
+    private int score;
+    
     /**
      * Constructor for objects of class game
      */

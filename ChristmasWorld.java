@@ -51,7 +51,7 @@ public class ChristmasWorld extends World
         {
             Zombie zombie = new Zombie();
             spawnMole(zombie);
-            //timeCounterZombie = 0;
+            
         }   
         
         if((timeCounter % goldenSpawnTime) == 0 )
@@ -90,8 +90,6 @@ public class ChristmasWorld extends World
         {
             Greenfoot.setWorld(new IntroWorld());
         }
-        
-       
         
     }
     /**
@@ -142,8 +140,6 @@ public class ChristmasWorld extends World
         game = new Game();
         Hammer hammer = new Hammer();
         addObject(hammer, 1,1);
-        
-        
         
         timeCounter = 0;
         createCoordinates();

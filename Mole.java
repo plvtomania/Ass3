@@ -22,30 +22,37 @@ public abstract class Mole extends Actor
         {
             selfDestruct();
         }
-        removeOnClick();
+        //removeOnClick();
     }
+    
     public Mole()
     {
-    expireTime = 0;
-    /*if (Greenfoot.mouseClicked(null) && !getIntersectingObjects(Hammer.class).isEmpty())
+        expireTime = 0;
+        /*if (Greenfoot.mouseClicked(null) && !getIntersectingObjects(Hammer.class).isEmpty())
         {    
             removeOnClick();
         }*/
     
     }
     
+    /**
+     *The moles selfdestruct when the
+     * 
+     */
     public void selfDestruct()
     {
         getWorld().removeObject(this);
     }
-    
+    /*
     public void removeOnClick()
     {
-    if (Greenfoot.mouseClicked(null)&& !getIntersectingObjects(Hammer.class).isEmpty()){
-        World world;
-        world = getWorld();
-        world.removeObject(this);
-        return;
-    }    
-    }
+        if (Greenfoot.mouseClicked(null)&& !getIntersectingObjects(Hammer.class).isEmpty())
+        {
+            World world;
+            world = getWorld();
+            
+            world.removeObject(this);
+            return;
+        }    
+    }*/
 }

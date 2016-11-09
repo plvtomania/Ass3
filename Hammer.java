@@ -21,6 +21,7 @@ public class Hammer extends Actor
         // Add your action code here.
         mouse();
         switchImage();
+        removeOnClick();
     }    
     
     public Hammer()
@@ -39,11 +40,11 @@ public class Hammer extends Actor
             setLocation(mouse.getX(),mouse.getY());
        }
        */
-       if(Greenfoot.mouseMoved(null))
-       {
+      if(Greenfoot.mouseMoved(null))
+      {
             MouseInfo mouse = Greenfoot.getMouseInfo();
             setLocation(mouse.getX(),mouse.getY());
-       }
+      }
        
       /*
       MouseInfo mouse = Greenfoot.getMouseInfo();
@@ -67,6 +68,21 @@ public class Hammer extends Actor
             }
             actCount++;
         }
+    }
+    
+    public void removeOnClick()
+    {
+        if (Greenfoot.mouseClicked(null)&& !getIntersectingObjects(Mole.class).isEmpty())
+        {
+            World world;
+            world = getWorld();
+            
+            Actor mole = getOneObjectAtOffset(0, 0, Mole.class);
+            
+           
+            world.removeObject(mole);
+            return;
+        }    
     }
 }
 
