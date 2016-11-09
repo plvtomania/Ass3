@@ -1,6 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 import java.util.ArrayList;
+import java.awt.Color;
 
 /**
  * Write a description of class MyWorld here.
@@ -13,7 +14,7 @@ public class ChristmasWorld extends World
     private int row;
     private int column;
     private int timeCounter;
-   
+    
     
     private String[] coordinates;
     
@@ -22,6 +23,8 @@ public class ChristmasWorld extends World
     private int zombieSpawnTime = 200;
     private int goldenSpawnTime = 900;
     private int elfSpawnTime = 300;
+    
+    private Game game;
     //private int 
     /**
      * Constructor for objects of class MyWorld.
@@ -37,7 +40,12 @@ public class ChristmasWorld extends World
     public void act()
     {
         timeCounter++;
-
+        if(timeCounter %72==0)
+        {
+            int seconds = game.getSeconds();
+            seconds++;
+            game.setSeconds(seconds);
+        }
             
         if((timeCounter % zombieSpawnTime) == 0 )
         {
@@ -60,6 +68,7 @@ public class ChristmasWorld extends World
            
         }
         
+        showText("Time " + game.getSeconds(), 60, 50);
     }
     
     /**
@@ -130,9 +139,11 @@ public class ChristmasWorld extends World
     
     private void initialize()
     {
-        
+        game = new Game();
         Hammer hammer = new Hammer();
         addObject(hammer, 1,1);
+        
+        
         
         timeCounter = 0;
         createCoordinates();
