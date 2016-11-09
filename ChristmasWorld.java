@@ -13,12 +13,15 @@ public class ChristmasWorld extends World
     private int row;
     private int column;
     private int timeCounter;
+   
+    
     private String[] coordinates;
     
     private int[][] board;
     
-    private final int SPAWN_TIME = 200;
-    
+    private int zombieSpawnTime = 200;
+    private int goldenSpawnTime = 900;
+    private int elfSpawnTime = 300;
     //private int 
     /**
      * Constructor for objects of class MyWorld.
@@ -34,12 +37,29 @@ public class ChristmasWorld extends World
     public void act()
     {
         timeCounter++;
-        
-        if(timeCounter >= SPAWN_TIME)
+
+            
+        if((timeCounter % zombieSpawnTime) == 0 )
         {
-            spawnMole();
-            timeCounter = 0;
+            Zombie zombie = new Zombie();
+            spawnMole(zombie);
+            //timeCounterZombie = 0;
+        }   
+        
+        if((timeCounter % goldenSpawnTime) == 0 )
+        {
+            GoldenZombie gZombie = new GoldenZombie();
+            spawnMole(gZombie);
+            
         }
+        
+        if((timeCounter % elfSpawnTime) == 0)
+        {
+            Elf elf = new Elf();
+            spawnMole(elf);
+           
+        }
+        
     }
     
     /**
@@ -65,8 +85,11 @@ public class ChristmasWorld extends World
        
         
     }
-    
-    public void spawnMole()
+    /**
+     * This method gets a random coordinate and checks if there is a mole on that coordinate.
+     * If there is a mole on the random coordinate it gets another random coordinate and uses it to spawn a mole on that location.
+     */
+    public void spawnMole(Mole object)
     {
         
         
@@ -79,25 +102,8 @@ public class ChristmasWorld extends World
             x++;
         }
         
-        Zombie zombie = new Zombie();
-        addObject(zombie, coordinates[0], coordinates[1]);
- 
-        
-        /*
-        if(getObjectsAt(coordinates[0], coordinates[1], null).isEmpty())
-        {         
-            Zombie zombie = new Zombie();
-            addObject(zombie, coordinates[0], coordinates[1]);
-            return;  
-        }
-        else
-        {
-            coordinates = getRandomCoordinate();
-        }
-        */
-        
-        //spawnMole();
-        
+        addObject(object, coordinates[0], coordinates[1]);
+
     }
     
     /**
@@ -129,7 +135,6 @@ public class ChristmasWorld extends World
         addObject(hammer, 1,1);
         
         timeCounter = 0;
-        
         createCoordinates();
         board = new int[3][3];
         for(int row = 0; row < 3; row++)
@@ -139,7 +144,7 @@ public class ChristmasWorld extends World
                 board[row][col] = 0; 
             }
         }
-        //spawnMole();
+       
     }
     
     
