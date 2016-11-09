@@ -17,8 +17,8 @@ public class Elf extends Mole
         super.act();
     }
     
-    public Elf()
+    public Elf(int expireTime)
     {
-       super();
+       super(expireTime);
     }
 }

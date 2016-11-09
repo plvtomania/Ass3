@@ -21,9 +21,9 @@ public class Zombie extends Mole
        
     }
     
-    public Zombie()
+    public Zombie(int expireTime)
     {
-       super();
+       super(expireTime);
            
     }
 

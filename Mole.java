@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public abstract class Mole extends Actor
 {
     protected int expireTime;
+    private int initExpireTime; 
 
     /**
      * Act - do whatever the Mole wants to do. This method is called whenever
@@ -18,21 +19,18 @@ public abstract class Mole extends Actor
     {
         // Add your action code here.
         expireTime++;
-        if(expireTime >= 100)
+        if(expireTime >= initExpireTime)
         {
             selfDestruct();
         }
         //removeOnClick();
     }
     
-    public Mole()
+    public Mole(int initExpireTime)
     {
         expireTime = 0;
-        /*if (Greenfoot.mouseClicked(null) && !getIntersectingObjects(Hammer.class).isEmpty())
-        {    
-            removeOnClick();
-        }*/
-    
+        
+        this.initExpireTime = initExpireTime;
     }
     
     /**

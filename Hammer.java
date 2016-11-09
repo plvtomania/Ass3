@@ -11,6 +11,8 @@ public class Hammer extends Actor
     private GreenfootImage image1;
     private GreenfootImage image2;
     private int actCount;
+    private int score;
+    
 
     /**
      * Act - do whatever the hammer wants to do. This method is called whenever
@@ -26,6 +28,7 @@ public class Hammer extends Actor
     
     public Hammer()
     {
+        score = 0;
         image1 = new GreenfootImage("candycane.png");
         image2 = new GreenfootImage("candycaneblood.png");
         setImage(image1);
@@ -72,17 +75,43 @@ public class Hammer extends Actor
     
     public void removeOnClick()
     {
-        if (Greenfoot.mouseClicked(null)&& !getIntersectingObjects(Mole.class).isEmpty())
-        {
-            World world;
-            world = getWorld();
-            
-            Actor mole = getOneObjectAtOffset(0, 0, Mole.class);
-            
+       
+       if (Greenfoot.mouseClicked(null))
+       {
+           Actor actor = getOneObjectAtOffset(0, 0, Actor.class);
+           if(actor!=null && actor.getClass()==Zombie.class)
+           {
+               Zombie zombie = (Zombie)actor;
+               World world = getWorld();
+               world.removeObject(actor);
+               
+               score = score + 1;
+           }
            
-            world.removeObject(mole);
-            return;
-        }    
+           if(actor!=null && actor.getClass()==GoldenZombie.class)
+           {
+               GoldenZombie gZombie = (GoldenZombie)actor;
+               World world = getWorld();
+               world.removeObject(actor);
+               
+               score = score + 3;
+           }
+           
+           if(actor!=null && actor.getClass()==Elf.class)
+           {
+               Elf elf = (Elf)actor;
+               World world = getWorld();
+               world.removeObject(actor);
+               
+               score = score - 2;
+           }
+       }
+        
+    }
+    
+    public int getScore()
+    {
+        return score;
     }
 }
 

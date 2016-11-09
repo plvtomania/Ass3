@@ -8,14 +8,16 @@ public class Game
 {
     private int seconds;
     private int score;
+    private int level;
     
     /**
      * Constructor for objects of class game
      */
     public Game()
     {
-        seconds=0;
-    }    
+        seconds = 0;
+        level = 1;
+    }
     
     public int getSeconds()
     {
@@ -26,18 +28,26 @@ public class Game
     {
         seconds = value;
     }
-    /*public void act()
+    
+    public int getScore()
     {
-        ChristmasWorld timeFromWorld = new ChristmasWorld();
-        timeFromWorld.timeCounter = timeCounter;
-        if(timeCounter()%36==0)
-        {
-            seconds++;
-        }
+        return score;
     }
     
-    public int gameTime()
+    public void setScore(int value)
     {
-        
-    }*/ 
+        score = value;
+    }
+    
+    public int getLevel()
+    {
+        return level;
+    }
+    
+    public void setLevel(int value)
+    {
+        level = value;
+    }
+    
+  
 }

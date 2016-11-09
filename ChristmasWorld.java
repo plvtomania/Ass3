@@ -20,12 +20,15 @@ public class ChristmasWorld extends World
     
     private int[][] board;
     
-    private int zombieSpawnTime = 200;
-    private int goldenSpawnTime = 900;
-    private int elfSpawnTime = 300;
+    private int zombieSpawnTime = 100;
+    private int goldenSpawnTime = 655;
+    private int elfSpawnTime = 230;
+    
+    private int expireTime;
     
     private Game game;
-    //private int 
+    private Hammer hammer;
+ 
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -49,26 +52,89 @@ public class ChristmasWorld extends World
             
         if((timeCounter % zombieSpawnTime) == 0 )
         {
-            Zombie zombie = new Zombie();
+            Zombie zombie = new Zombie(expireTime);
             spawnMole(zombie);
             
         }   
         
         if((timeCounter % goldenSpawnTime) == 0 )
         {
-            GoldenZombie gZombie = new GoldenZombie();
+            GoldenZombie gZombie = new GoldenZombie(expireTime);
             spawnMole(gZombie);
             
         }
         
         if((timeCounter % elfSpawnTime) == 0)
         {
-            Elf elf = new Elf();
+            Elf elf = new Elf(expireTime);
             spawnMole(elf);
            
         }
         
         showText("Time " + game.getSeconds(), 60, 50);
+        showText("Score " + game.getScore(), 250, 50);
+        showText("Level " + game.getLevel(), 400, 50);
+        
+        game.setScore(hammer.getScore());
+        /*   private int zombieSpawnTime = 100;
+    private int goldenSpawnTime = 655;
+    private int elfSpawnTime = 230;*/
+        if(game.getScore() <= 4)
+        {
+            game.setLevel(1);
+            expireTime = 120;
+            zombieSpawnTime = 100;
+            goldenSpawnTime = 655;
+            elfSpawnTime = 230;
+        }
+        else if(game.getScore() >= 5 && game.getScore() <= 11)
+        {
+            game.setLevel(2);
+            expireTime = 110;
+            zombieSpawnTime = 90;
+            goldenSpawnTime = 655;
+            elfSpawnTime = 200;
+        }
+        else if(game.getScore() >= 12 && game.getScore() <= 18)
+        {
+            game.setLevel(3);
+            expireTime = 90;
+            zombieSpawnTime = 80;
+            goldenSpawnTime = 655;
+            elfSpawnTime = 170;
+        }
+        else if(game.getScore() >= 19 && game.getScore() <= 25)
+        {
+            game.setLevel(4);
+            expireTime = 60;
+            zombieSpawnTime = 70;
+            goldenSpawnTime = 655;
+            elfSpawnTime = 140;
+        }
+        else if(game.getScore() >= 26 && game.getScore() <= 34)
+        {
+            game.setLevel(5);
+            expireTime = 50;
+            zombieSpawnTime = 60;
+            goldenSpawnTime = 655;
+            elfSpawnTime = 110;
+        }
+        else if(game.getScore() >= 35 && game.getScore() <= 41)
+        {
+            game.setLevel(6);
+            expireTime = 40;
+            zombieSpawnTime = 50;
+            goldenSpawnTime = 655;
+            elfSpawnTime = 80;
+        }
+        else if(game.getScore() >= 42 && game.getScore() <= 48)
+        {
+            game.setLevel(7);
+            expireTime = 30;
+            zombieSpawnTime = 40;
+            goldenSpawnTime = 655;
+            elfSpawnTime = 50;
+        }
     }
     
     /**
@@ -92,6 +158,7 @@ public class ChristmasWorld extends World
         }
         
     }
+    
     /**
      * This method gets a random coordinate and checks if there is a mole on that coordinate.
      * If there is a mole on the random coordinate it gets another random coordinate and uses it to spawn a mole on that location.
@@ -138,8 +205,10 @@ public class ChristmasWorld extends World
     private void initialize()
     {
         game = new Game();
-        Hammer hammer = new Hammer();
+        hammer = new Hammer();
         addObject(hammer, 1,1);
+        
+        expireTime = 120;
         
         timeCounter = 0;
         createCoordinates();
@@ -153,8 +222,6 @@ public class ChristmasWorld extends World
         }
        
     }
-    
-    
     
     private void createCoordinates()
     {

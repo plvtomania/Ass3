@@ -17,8 +17,8 @@ public class GoldenZombie extends Mole
         super.act();
     }  
     
-    public GoldenZombie()
+    public GoldenZombie(int expireTime)
     {
-       super();
+       super(expireTime);
     }
 }
