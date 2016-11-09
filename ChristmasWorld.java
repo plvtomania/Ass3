@@ -27,7 +27,7 @@ public class ChristmasWorld extends World
     
     private int expireTime;
     
-    private Game game;
+    private game game;
     private Hammer hammer;
  
     /**
@@ -55,12 +55,10 @@ public class ChristmasWorld extends World
         {
             Zombie zombie = new Zombie(expireTime);
             spawnMole(zombie);
-<<<<<<< HEAD
-            
-=======
+
             molePopUp.play();
             //timeCounterZombie = 0;
->>>>>>> origin/master
+
         }   
         
         if((timeCounter % goldenSpawnTime) == 0 )
@@ -77,9 +75,9 @@ public class ChristmasWorld extends World
             molePopUp.play();
         }
         
-        showText("Time " + game.getSeconds(), 60, 50);
-        showText("Score " + game.getScore(), 250, 50);
-        showText("Level " + game.getLevel(), 400, 50);
+        showText("Time " + game.getSeconds(), 89, 43);
+        showText("Score " + game.getScore(), 255, 43);
+        showText("Level " + game.getLevel(), 400, 43);
         
         game.setScore(hammer.getScore());
         /*   private int zombieSpawnTime = 100;
@@ -211,7 +209,7 @@ public class ChristmasWorld extends World
     
     private void initialize()
     {
-        game = new Game();
+        game = new game();
         hammer = new Hammer();
         addObject(hammer, 1,1);
         

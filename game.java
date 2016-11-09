@@ -4,7 +4,7 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Game  
+public class game  
 {
     private int seconds;
     private int score;
@@ -13,7 +13,7 @@ public class Game
     /**
      * Constructor for objects of class game
      */
-    public Game()
+    public game()
     {
         seconds = 0;
         level = 1;
