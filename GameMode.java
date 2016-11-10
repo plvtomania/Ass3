@@ -3,9 +3,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class GameMode here.
  * 
- * @author (your name) 
+ * @authors Casper, Casper, Kasper, Meng and Deividas
  * @version (a version number or a date)
  */
+
 public abstract class GameMode extends World
 {
     private int row;
@@ -30,23 +31,12 @@ public abstract class GameMode extends World
     {
         // Create a new world with 500x450 cells with a cell size of 1x1 pixels.
         super(500,450,1);  
-         /*   
-        if (gameStarted)
-        {
-            initialize();
-            setPaintOrder(Hammer.class, Mole.class);
-        }
-        else
-        {
-            Greenfoot.setWorld(new IntroWorld());
-        }*/
     }
     
     public void act()
     {
         // this timer counts time in seconds.
         timeCounter++;
-        
         
         // Everytime the timer is equal to the zombieSpawnTime, a new zombie is spawned and a sound is played.
         if(checkGameOver())
@@ -91,6 +81,9 @@ public abstract class GameMode extends World
          *  private int elfSpawnTime = 230;*/
     }
     
+    /**
+     * A method to handle the current score in the game.
+     */
     private void handleScore()
     {
         if(game.getScore() <= 4)
@@ -196,6 +189,9 @@ public abstract class GameMode extends World
      */
     public abstract boolean checkGameOver();
     
+    /**
+     * Initializes the game at a fixed state.
+     */
     public void initialize()
     {
         game = new game();
@@ -226,7 +222,5 @@ public abstract class GameMode extends World
         coordinates[7] = "239,352";
         coordinates[8] = "385,352";        
     }
-    
-    
 }
 

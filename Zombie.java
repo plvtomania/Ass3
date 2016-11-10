@@ -12,15 +12,12 @@ public class Zombie extends Mole
      * Act - do whatever the Zombie wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
-    
     public void act() 
     {
         // Makes it possible for the super class Mole.class to control the acts of Zombie.class.
        super.act();
        if(expireTime  >= initExpireTime)
         {
-            
             if(getWorld() instanceof HalloweenWorld)
             {
                 HalloweenWorld halloweenWorld = (HalloweenWorld) getWorld();

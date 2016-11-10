@@ -17,7 +17,6 @@ public class GoldenZombie extends Mole
         super.act();
         if(expireTime >= initExpireTime)
         {
-            
             if(getWorld() instanceof HalloweenWorld)
             {
                 HalloweenWorld halloweenWorld = (HalloweenWorld) getWorld();
@@ -26,10 +25,7 @@ public class GoldenZombie extends Mole
                 
             }
             selfDestruct();
-
-            
         }
-        
     }  
     
     /**

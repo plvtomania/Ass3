@@ -19,26 +19,16 @@ public class IntroWorld extends World
     {    
         super(WORLD_WIDTH, WORLD_HEIGHT, 1); 
         createButtons();
-        /*GreenfootImage intro = getBackground();
-        intro.setColor(Color.BLACK);
-        intro.drawString("Intro world. Hit <enter> to start game...", WORLD_WIDTH / 2 - 100  , WORLD_HEIGHT / 2 - 10);
-        intro.drawString("Use the cursor to whack the mole", WORLD_WIDTH / 2 - 95, WORLD_HEIGHT / 2 + 10);*/
     }
     
     public void act()
     {
-        /* Makes it possible to press enter to enter the game.
-        String key = Greenfoot.getKey();
-        if (key != null && key.equals("enter"))
-        {
-            Greenfoot.setWorld(new ChristmasWorld(true));
-        }
-        if (key != null && key.equals("space"))
-        {
-            Greenfoot.setWorld(new HalloweenWorld(true));
-        }*/
     }
     
+    /**
+     * Creates buttons for ChristmasWorld and HalloweenWorld,
+     * so the player can choose which version, he/she wants to play.
+     */
     private void createButtons()
     {
         GreenfootImage christmasButton = new GreenfootImage("ChristmasWorldButton.jpg");

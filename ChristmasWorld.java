@@ -23,6 +23,10 @@ public class ChristmasWorld extends GameMode
         this(false); 
     }
     
+    /**
+     * Makes the class act however the super class wants it to act.
+     * Displays time in live seconds.
+     */
     public void act()
     {
         super.act();
@@ -34,6 +38,7 @@ public class ChristmasWorld extends GameMode
             game.setSeconds(seconds);
         }
     }
+    
     /**
      * Constructor for objects of class .
      */

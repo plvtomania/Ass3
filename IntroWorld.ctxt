@@ -8,4 +8,5 @@ comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ createButtons()
+comment3.text=\r\n\ Creates\ buttons\ for\ ChristmasWorld\ and\ HalloweenWorld,\r\n\ so\ the\ player\ can\ choose\ which\ version,\ he/she\ wants\ to\ play.\r\n
 numComments=4

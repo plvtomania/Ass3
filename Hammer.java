@@ -122,6 +122,7 @@ public class Hammer extends Actor
        }
         
     }
+    
     /**
      * Gets the current score in the game.
      */
@@ -130,11 +131,17 @@ public class Hammer extends Actor
         return score;
     }
     
+    /**
+     * Gets the healthDrop information.
+     */
     public int getHealthDrop()
     {
         return healthDrop;
     }
     
+    /**
+     * Sets the healthDrop information.
+     */
     public void setHealthDrop(int value)
     {
         healthDrop = value;

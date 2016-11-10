@@ -19,7 +19,6 @@ public abstract class Mole extends Actor
     {
         // Counts up the expireTime, and if the expireTime is greater than or equal to initExpireTime, the mole is selfdestructed.
         expireTime++;
-
     }
     
     /**

@@ -3,7 +3,7 @@ import java.awt.Color;
 /**
  * Write a description of class Button here.
  * 
- * @author (your name) 
+ * @authors Casper, Casper, Kasper, Meng and Deividas
  * @version (a version number or a date)
  */
 public class Button extends Actor
@@ -27,6 +27,10 @@ public class Button extends Actor
         }
     }
     
+    /**
+     * Constructor of the button class. Sets current input equal to input,
+     * and current image equal to image.
+     */
     public Button(int input, GreenfootImage image)
     {
         this.input = input;
@@ -35,6 +39,9 @@ public class Button extends Actor
         createImage();
     }
     
+    /**
+     * A method to make it possible to switch between worlds.
+     */
     public void function(int value)
     {
         switch(input)
@@ -48,6 +55,9 @@ public class Button extends Actor
         }
     }
     
+    /**
+     * Creates the image of the button.
+     */
     private void createImage()
     {
         setImage(image);

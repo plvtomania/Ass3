@@ -6,6 +6,7 @@ comment1.target=ChristmasWorld()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\r\n\ \r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Makes\ the\ class\ act\ however\ the\ super\ class\ wants\ it\ to\ act.\r\n\ Displays\ time\ in\ live\ seconds.\r\n
 comment3.params=gameStarted
 comment3.target=ChristmasWorld(boolean)
 comment3.text=\r\n\ Constructor\ for\ objects\ of\ class\ .\r\n

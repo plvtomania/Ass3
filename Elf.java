@@ -20,7 +20,6 @@ public class Elf extends Mole
             selfDestruct();
                 
         }
-        
     }
     
     /**

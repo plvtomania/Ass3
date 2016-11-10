@@ -1,13 +1,16 @@
 #BlueJ class context
 comment0.target=Button
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Button\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Button\ here.\r\n\ \r\n\ @authors\ Casper,\ Casper,\ Kasper,\ Meng\ and\ Deividas\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Button\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=input\ image
 comment2.target=Button(int,\ greenfoot.GreenfootImage)
+comment2.text=\r\n\ Constructor\ of\ the\ button\ class.\ Sets\ current\ input\ equal\ to\ input,\r\n\ and\ current\ image\ equal\ to\ image.\r\n
 comment3.params=value
 comment3.target=void\ function(int)
+comment3.text=\r\n\ A\ method\ to\ make\ it\ possible\ to\ switch\ between\ worlds.\r\n
 comment4.params=
 comment4.target=void\ createImage()
+comment4.text=\r\n\ Creates\ the\ image\ of\ the\ button.\r\n
 numComments=5
