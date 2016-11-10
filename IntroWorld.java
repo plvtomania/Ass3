@@ -4,7 +4,7 @@ import java.awt.Color;
 /**
  * Write a description of class IntroWorld here.
  * 
- * @author (your name) 
+ * @authors Casper, Casper, Kasper, Meng and Deividas
  * @version (a version number or a date)
  */
 public class IntroWorld extends World
@@ -27,6 +27,7 @@ public class IntroWorld extends World
     
     public void act()
     {
+        
         String key = Greenfoot.getKey();
         if (key != null && key.equals("enter"))
         {
