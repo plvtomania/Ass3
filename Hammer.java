@@ -12,6 +12,8 @@ public class Hammer extends Actor
     private GreenfootImage image2;
     private int actCount;
     private int score;
+    private GreenfootSound goodMole;
+    private GreenfootSound badMole;
     
 
     /**
@@ -24,6 +26,8 @@ public class Hammer extends Actor
         mouse();
         switchImage();
         removeOnClick();
+        goodMole = new GreenfootSound("GoodMole.wav");
+        badMole = new GreenfootSound("BadMole.wav");
     }    
     
     /**
@@ -84,6 +88,7 @@ public class Hammer extends Actor
                Zombie zombie = (Zombie)actor;
                World world = getWorld();
                world.removeObject(actor);
+               goodMole.play();
                
                score = score + 1;
            }
@@ -93,6 +98,7 @@ public class Hammer extends Actor
                GoldenZombie gZombie = (GoldenZombie)actor;
                World world = getWorld();
                world.removeObject(actor);
+               goodMole.play();
                
                score = score + 3;
            }
@@ -102,6 +108,7 @@ public class Hammer extends Actor
                Elf elf = (Elf)actor;
                World world = getWorld();
                world.removeObject(actor);
+               badMole.play();
                
                score = score - 2;
            }

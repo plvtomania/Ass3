@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu Nov 10 09:45:17 CET 2016
+#Thu Nov 10 10:38:53 CET 2016
 editor.fx.0.height=700
 target2.width=80
 target8.name=Mole
@@ -74,7 +74,7 @@ target7.typeParameters=
 target2.name=game
 dependency9.from=ChristmasWorld
 readme.name=@README
-editor.swing.0.width=1936
+editor.swing.0.width=1937
 target6.name=IntroWorld
 dependency10.type=UsesDependency
 editor.fx.0.width=700

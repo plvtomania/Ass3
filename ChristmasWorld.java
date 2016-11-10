@@ -14,8 +14,6 @@ public class ChristmasWorld extends World
     private int row;
     private int column;
     private int timeCounter;
-    private GreenfootSound molePopUp;
-    
     
     private String[] coordinates;
     
@@ -57,8 +55,6 @@ public class ChristmasWorld extends World
         {
             Zombie zombie = new Zombie(expireTime);
             spawnMole(zombie);
-
-            molePopUp.play();
             //timeCounterZombie = 0;
 
         }   
@@ -68,7 +64,6 @@ public class ChristmasWorld extends World
         {
             GoldenZombie gZombie = new GoldenZombie(expireTime);
             spawnMole(gZombie);
-            molePopUp.play();
         }
         
         // Everytime the timer is equal to the elfSpawnTime, a new elf is spawned and a sound is played.
@@ -76,7 +71,6 @@ public class ChristmasWorld extends World
         {
             Elf elf = new Elf(expireTime);
             spawnMole(elf);
-            molePopUp.play();
         }
         
         // Displays time, score and level on the set coordinates.
@@ -157,8 +151,6 @@ public class ChristmasWorld extends World
         {
             initialize();
             setPaintOrder(Hammer.class, Mole.class);
-            molePopUp = new GreenfootSound("MolePopUp.wav");
-            //addObject.zombie;
         }
         else
         {
@@ -191,10 +183,10 @@ public class ChristmasWorld extends World
     private int[] getRandomCoordinate()
     {
         int[] coordinate = new int[2];
-        String coorinateString;
-        coorinateString = "" + coordinates[Greenfoot.getRandomNumber(9)];
+        String coordinateString;
+        coordinateString = "" + coordinates[Greenfoot.getRandomNumber(9)];
         
-        String[] stringSplit = coorinateString.split(",");
+        String[] stringSplit = coordinateString.split(",");
         
         for(int i = 0; i < coordinate.length; i++)
         {
@@ -245,7 +237,7 @@ public class ChristmasWorld extends World
         coordinates[5] = "385,238";
         coordinates[6] = "90,352";
         coordinates[7] = "239,352";
-        coordinates[8] = "385,352";
+        coordinates[8] = "385,352";        
     }
 }
 
