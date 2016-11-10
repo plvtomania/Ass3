@@ -148,15 +148,23 @@ public abstract class GameMode extends World
             expireTime = 60;
             zombieSpawnTime = 25;
             goldenSpawnTime = 480;
-            elfSpawnTime = 70;
+            elfSpawnTime = 65;
         }
         else if(game.getScore() >= 55 && game.getScore() <= 63)
         {
             game.setLevel(9);
-            expireTime = 40;
+            expireTime = 55;
             zombieSpawnTime = 20;
             goldenSpawnTime = 555;
-            elfSpawnTime = 50;
+            elfSpawnTime = 40;
+        }
+        else if(game.getScore() >= 64)
+        {
+            game.setLevel(10);
+            expireTime = 50;
+            zombieSpawnTime = 15;
+            goldenSpawnTime = 300;
+            elfSpawnTime = 35;
         }
     }
       
