@@ -16,7 +16,6 @@ public class EndScreen extends World
      */
     public EndScreen(int score, int level, int gameMode)
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(500, 450, 1); 
         this.score = score;
         this.level = level;
@@ -40,8 +39,8 @@ public class EndScreen extends World
      */
     private void createButtons()
     {
-        GreenfootImage quitimage = new GreenfootImage("quitbutton.jpg");
+        GreenfootImage quitimage = new GreenfootImage("QuitButton.jpg");
 
-        addObject(new Button(1,quitimage), 322,362);
+        addObject(new Button(1,quitimage), 245,355);
     }
 }
