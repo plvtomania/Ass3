@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Mole here.
  * 
- * @author (your name) 
+ * @authors Casper, Casper, Kasper, Meng and Deividas
  * @version (a version number or a date)
  */
 public abstract class Mole extends Actor
@@ -17,15 +17,18 @@ public abstract class Mole extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        // Counts up the expireTime, and if the expireTime is greater than or equal to initExpireTime, the mole is selfdestructed.
         expireTime++;
         if(expireTime >= initExpireTime)
         {
             selfDestruct();
         }
-        //removeOnClick();
     }
     
+    /**
+     * Constructor for Mole.class.
+     * Sets the expireTime to 0, and the current initExpireTime equal to initExpireTime.
+     */
     public Mole(int initExpireTime)
     {
         expireTime = 0;
@@ -34,23 +37,10 @@ public abstract class Mole extends Actor
     }
     
     /**
-     *The moles selfdestruct when the
-     * 
+     * Makes it possible for the moles to selfdestruct.
      */
     public void selfDestruct()
     {
         getWorld().removeObject(this);
     }
-    /*
-    public void removeOnClick()
-    {
-        if (Greenfoot.mouseClicked(null)&& !getIntersectingObjects(Hammer.class).isEmpty())
-        {
-            World world;
-            world = getWorld();
-            
-            world.removeObject(this);
-            return;
-        }    
-    }*/
 }

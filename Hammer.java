@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class hammer here.
  * 
- * @author (your name) 
+ * @authors Casper, Casper, Kasper, Meng and Deividas
  * @version (a version number or a date)
  */
 public class Hammer extends Actor
@@ -20,12 +20,15 @@ public class Hammer extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        // Calls the mouse, switchImage and removeOnClick methods.
         mouse();
         switchImage();
         removeOnClick();
     }    
     
+    /**
+     * Creates a hammer with score and an image.
+     */
     public Hammer()
     {
         score = 0;
@@ -34,27 +37,21 @@ public class Hammer extends Actor
         setImage(image1);
     }
     
+    /**
+     * Detects mouse movement.
+     */
     public void mouse()
     {
-       /*
-       if(!Greenfoot.mouseMoved(null))
-       {
-            MouseInfo mouse = Greenfoot.getMouseInfo();
-            setLocation(mouse.getX(),mouse.getY());
-       }
-       */
       if(Greenfoot.mouseMoved(null))
       {
             MouseInfo mouse = Greenfoot.getMouseInfo();
             setLocation(mouse.getX(),mouse.getY());
       }
-       
-      /*
-      MouseInfo mouse = Greenfoot.getMouseInfo();
-      setLocation(mouse.getX(),mouse.getY());
-      */
     }
-   
+    
+    /**
+     * Changes the image of the candy cane, when a certain actCount number is met.
+     */
     public void switchImage()
     {
         if(Greenfoot.mousePressed(null))
@@ -73,6 +70,9 @@ public class Hammer extends Actor
         }
     }
     
+    /**
+     * When a Zombie, GoldenZombie or Elf is clicked, the clicked actor is removed from the game.
+     */
     public void removeOnClick()
     {
        
@@ -108,7 +108,9 @@ public class Hammer extends Actor
        }
         
     }
-    
+    /**
+     * Gets the current score in the game.
+     */
     public int getScore()
     {
         return score;

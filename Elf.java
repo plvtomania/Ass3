@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Elf here.
  * 
- * @author (your name) 
+ * @authors Casper, Casper, Kasper, Meng and Deividas
  * @version (a version number or a date)
  */
 public class Elf extends Mole
@@ -17,6 +17,10 @@ public class Elf extends Mole
         super.act();
     }
     
+    /**
+     * Constructor for Elf.class.
+     * Uses the expireTime from the super class Mole.class.
+     */
     public Elf(int expireTime)
     {
        super(expireTime);

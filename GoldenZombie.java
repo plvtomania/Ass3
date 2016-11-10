@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class GoldenZombie here.
  * 
- * @author (your name) 
+ * @authors Casper, Casper, Kasper, Meng and Deividas 
  * @version (a version number or a date)
  */
 public class GoldenZombie extends Mole
@@ -17,6 +17,9 @@ public class GoldenZombie extends Mole
         super.act();
     }  
     
+    /**
+     * Constructor for GoldenZombie.class.
+     */
     public GoldenZombie(int expireTime)
     {
        super(expireTime);

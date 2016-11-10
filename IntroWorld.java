@@ -27,7 +27,7 @@ public class IntroWorld extends World
     
     public void act()
     {
-        
+        // Makes it possible to press enter to enter the game.
         String key = Greenfoot.getKey();
         if (key != null && key.equals("enter"))
         {
