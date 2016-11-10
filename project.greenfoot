@@ -1,5 +1,9 @@
 #Greenfoot properties
+<<<<<<< HEAD
 #Thu Nov 10 10:38:53 CET 2016
+=======
+#Thu Nov 10 10:50:31 CET 2016
+>>>>>>> origin/master
 editor.fx.0.height=700
 target2.width=80
 target8.name=Mole
@@ -31,12 +35,20 @@ target8.height=50
 dependency10.to=Zombie
 dependency14.from=Hammer
 target3.naviview.expanded=false
+<<<<<<< HEAD
+=======
+class.EndScreen.superclass=greenfoot.World
+>>>>>>> origin/master
 class.GoldenZombie.superclass=Mole
 dependency4.from=IntroWorld
 dependency5.to=Hammer
 class.MyWorld.superclass=greenfoot.World
 target1.name=Hammer
 dependency8.from=ChristmasWorld
+<<<<<<< HEAD
+=======
+class.EndScreen.image=endscreen.jpg
+>>>>>>> origin/master
 target4.typeParameters=
 target5.name=ChristmasWorld
 world.lastInstantiated=ChristmasWorld
@@ -68,13 +80,22 @@ mainWindow.x=376
 editor.swing.0.x=-8
 target5.showInterface=false
 class.hammer.superclass=greenfoot.Actor
+<<<<<<< HEAD
 target8.showInterface=false
 dependency5.from=Zombie
+=======
+dependency5.from=Zombie
+target8.showInterface=false
+>>>>>>> origin/master
 target7.typeParameters=
 target2.name=game
 dependency9.from=ChristmasWorld
 readme.name=@README
+<<<<<<< HEAD
 editor.swing.0.width=1937
+=======
+editor.swing.0.width=1936
+>>>>>>> origin/master
 target6.name=IntroWorld
 dependency10.type=UsesDependency
 editor.fx.0.width=700
@@ -127,6 +148,10 @@ simulation.speed=50
 target7.height=50
 dependency5.type=UsesDependency
 target8.type=AbstractTarget
+<<<<<<< HEAD
+=======
+class.Button.superclass=greenfoot.Actor
+>>>>>>> origin/master
 dependency13.from=ChristmasWorld
 dependency9.type=UsesDependency
 target6.width=80
@@ -150,5 +175,10 @@ readme.x=10
 target4.height=50
 readme.height=58
 target1.width=80
+<<<<<<< HEAD
 =\=\=\=\=\=\=
 dependency14.to=Elf
+=======
+dependency14.to=Elf
+=\=\=\=\=\=\=
+>>>>>>> origin/master

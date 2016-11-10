@@ -14,11 +14,13 @@ public class ChristmasWorld extends World
     private int row;
     private int column;
     private int timeCounter;
+<<<<<<< HEAD
+=======
+    private GreenfootSound molePopUp;
+>>>>>>> origin/master
     
     private String[] coordinates;
-    
-    private int[][] board;
-    
+   
     private int zombieSpawnTime = 100;
     private int goldenSpawnTime = 655;
     private int elfSpawnTime = 230;
@@ -43,19 +45,33 @@ public class ChristmasWorld extends World
     {
         // this timer counts time in seconds.
         timeCounter++;
-        if(timeCounter %72==0)
+        if(timeCounter %60==0)
         {
             int seconds = game.getSeconds();
             seconds++;
             game.setSeconds(seconds);
         }
         
+<<<<<<< HEAD
         // Everytime the timer is equal to the zombieSpawnTime, a new zombie is spawned and a sound is played.
+=======
+        if(checkGameOver())
+        {
+            //EndScreen endScreen = new EndScreen();
+            Greenfoot.setWorld(new EndScreen(game.getScore(), game.getLevel(),1));
+        }
+            
+>>>>>>> origin/master
         if((timeCounter % zombieSpawnTime) == 0 )
         {
             Zombie zombie = new Zombie(expireTime);
             spawnMole(zombie);
+<<<<<<< HEAD
             //timeCounterZombie = 0;
+=======
+
+            molePopUp.play();
+>>>>>>> origin/master
 
         }   
         
@@ -79,8 +95,43 @@ public class ChristmasWorld extends World
         showText("Level " + game.getLevel(), 400, 43);
         
         game.setScore(hammer.getScore());
+<<<<<<< HEAD
         
         // Specification of what happens, when you gain a certain amount of points while playing the game.
+=======
+        handleScore();
+        /*   private int zombieSpawnTime = 100;
+         *  private int goldenSpawnTime = 655;
+         *  private int elfSpawnTime = 230;*/
+        
+    }
+    
+    /**
+     * Constructor for objects of class .
+     */
+    public ChristmasWorld(boolean gameStarted)
+    {
+        
+        // Create a new world with 500x450 cells with a cell size of 1x1 pixels.
+        super(500, 450, 1);  
+            
+        if (gameStarted)
+        {
+            initialize();
+            setPaintOrder(Hammer.class, Mole.class);
+            molePopUp = new GreenfootSound("MolePopUp.wav");
+            //addObject.zombie;
+        }
+        else
+        {
+            Greenfoot.setWorld(new IntroWorld());
+        }
+        
+    }
+    
+    private void handleScore()
+    {
+>>>>>>> origin/master
         if(game.getScore() <= 4)
         {
             game.setLevel(1);
@@ -140,6 +191,7 @@ public class ChristmasWorld extends World
     }
     
     /**
+<<<<<<< HEAD
      * Constructor for objects of class .
      */
     public ChristmasWorld(boolean gameStarted)
@@ -159,9 +211,12 @@ public class ChristmasWorld extends World
     }
     
     /**
+=======
+>>>>>>> origin/master
      * This method gets a random coordinate and checks if there is a mole on that coordinate.
      * If there is a mole on the random coordinate it gets another random coordinate and uses it to spawn a mole on that location.
      */
+    
     public void spawnMole(Mole object)
     {
         int[] coordinates = getRandomCoordinate();
@@ -193,15 +248,26 @@ public class ChristmasWorld extends World
             coordinate[i] = Integer.parseInt(stringSplit[i]);
         }
         
-        
-        
         return coordinate;
     }
     
+<<<<<<< HEAD
     /**
      * When the game is initialized, a hammer (candy cane) is added at 1,1. Specific values are set for expireTime and timeCounter. 
      * An array of 9 coordinates is created, so it is possible to spawn moles 9 places on the game board.
      */
+=======
+    public boolean checkGameOver()
+    {
+        if(game.getSeconds() >= 60)
+        {
+            return true;
+        }
+        
+        return false;
+    }
+    
+>>>>>>> origin/master
     private void initialize()
     {
         game = new game();
@@ -212,14 +278,7 @@ public class ChristmasWorld extends World
         
         timeCounter = 0;
         createCoordinates();
-        board = new int[3][3];
-        for(int row = 0; row < 3; row++)
-        {
-            for(int col = 0; col < 3; col++)
-            {
-                board[row][col] = 0; 
-            }
-        }
+        
        
     }
     /**
@@ -239,5 +298,7 @@ public class ChristmasWorld extends World
         coordinates[7] = "239,352";
         coordinates[8] = "385,352";        
     }
+    
+    
 }
 
