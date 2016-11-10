@@ -75,7 +75,6 @@ public class Hammer extends Actor
     
     public void removeOnClick()
     {
-       
        if (Greenfoot.mouseClicked(null))
        {
            Actor actor = getOneObjectAtOffset(0, 0, Actor.class);

@@ -32,5 +32,10 @@ public class IntroWorld extends World
         {
             Greenfoot.setWorld(new ChristmasWorld(true));
         }
+        if (key != null && key.equals("space"))
+        {
+            Greenfoot.setWorld(new ChristmasWorld(true));
+        }
     }
+    
 }

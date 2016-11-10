@@ -16,11 +16,8 @@ public class ChristmasWorld extends World
     private int timeCounter;
     private GreenfootSound molePopUp;
     
-    
     private String[] coordinates;
-    
-    private int[][] board;
-    
+   
     private int zombieSpawnTime = 100;
     private int goldenSpawnTime = 655;
     private int elfSpawnTime = 230;
@@ -44,11 +41,17 @@ public class ChristmasWorld extends World
     public void act()
     {
         timeCounter++;
-        if(timeCounter %72==0)
+        if(timeCounter %60==0)
         {
             int seconds = game.getSeconds();
             seconds++;
             game.setSeconds(seconds);
+        }
+        
+        if(checkGameOver())
+        {
+            //EndScreen endScreen = new EndScreen();
+            Greenfoot.setWorld(new EndScreen(game.getScore(), game.getLevel(),1));
         }
             
         if((timeCounter % zombieSpawnTime) == 0 )
@@ -57,7 +60,6 @@ public class ChristmasWorld extends World
             spawnMole(zombie);
 
             molePopUp.play();
-            //timeCounterZombie = 0;
 
         }   
         
@@ -80,9 +82,38 @@ public class ChristmasWorld extends World
         showText("Level " + game.getLevel(), 400, 43);
         
         game.setScore(hammer.getScore());
+        handleScore();
         /*   private int zombieSpawnTime = 100;
-    private int goldenSpawnTime = 655;
-    private int elfSpawnTime = 230;*/
+         *  private int goldenSpawnTime = 655;
+         *  private int elfSpawnTime = 230;*/
+        
+    }
+    
+    /**
+     * Constructor for objects of class .
+     */
+    public ChristmasWorld(boolean gameStarted)
+    {
+        
+        // Create a new world with 500x450 cells with a cell size of 1x1 pixels.
+        super(500, 450, 1);  
+            
+        if (gameStarted)
+        {
+            initialize();
+            setPaintOrder(Hammer.class, Mole.class);
+            molePopUp = new GreenfootSound("MolePopUp.wav");
+            //addObject.zombie;
+        }
+        else
+        {
+            Greenfoot.setWorld(new IntroWorld());
+        }
+        
+    }
+    
+    private void handleScore()
+    {
         if(game.getScore() <= 4)
         {
             game.setLevel(1);
@@ -142,36 +173,12 @@ public class ChristmasWorld extends World
     }
     
     /**
-     * Constructor for objects of class .
-     */
-    public ChristmasWorld(boolean gameStarted)
-    {
-        
-        // Create a new world with 500x450 cells with a cell size of 1x1 pixels.
-        super(500, 450, 1);  
-            
-        if (gameStarted)
-        {
-            initialize();
-            setPaintOrder(Hammer.class, Mole.class);
-            molePopUp = new GreenfootSound("MolePopUp.wav");
-            //addObject.zombie;
-        }
-        else
-        {
-            Greenfoot.setWorld(new IntroWorld());
-        }
-        
-    }
-    
-    /**
      * This method gets a random coordinate and checks if there is a mole on that coordinate.
      * If there is a mole on the random coordinate it gets another random coordinate and uses it to spawn a mole on that location.
      */
+    
     public void spawnMole(Mole object)
     {
-        
-        
         int[] coordinates = getRandomCoordinate();
         
         int x = 0;
@@ -202,9 +209,17 @@ public class ChristmasWorld extends World
             coordinate[i] = Integer.parseInt(stringSplit[i]);
         }
         
-        
-        
         return coordinate;
+    }
+    
+    public boolean checkGameOver()
+    {
+        if(game.getSeconds() >= 5)
+        {
+            return true;
+        }
+        
+        return false;
     }
     
     private void initialize()
@@ -217,14 +232,7 @@ public class ChristmasWorld extends World
         
         timeCounter = 0;
         createCoordinates();
-        board = new int[3][3];
-        for(int row = 0; row < 3; row++)
-        {
-            for(int col = 0; col < 3; col++)
-            {
-                board[row][col] = 0; 
-            }
-        }
+        
        
     }
     
@@ -242,5 +250,7 @@ public class ChristmasWorld extends World
         coordinates[7] = "239,352";
         coordinates[8] = "385,352";
     }
+    
+    
 }
 
