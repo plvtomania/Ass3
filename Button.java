@@ -12,7 +12,6 @@ public class Button extends Actor
     private int y;
     private GreenfootImage image;
     
-    
     /**
      * Act - do whatever the Button wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -43,6 +42,8 @@ public class Button extends Actor
            case 1: Greenfoot.setWorld(new IntroWorld()); 
            break;
            case 2: Greenfoot.setWorld(new ChristmasWorld(true));
+           break;
+           case 3: Greenfoot.setWorld(new HalloweenWorld(true));
            break;
         }
     }

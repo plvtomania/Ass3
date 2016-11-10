@@ -17,12 +17,12 @@ public class IntroWorld extends World
      */
     public IntroWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(WORLD_WIDTH, WORLD_HEIGHT, 1); 
-        GreenfootImage intro = getBackground();
+        createButtons();
+        /*GreenfootImage intro = getBackground();
         intro.setColor(Color.BLACK);
         intro.drawString("Intro world. Hit <enter> to start game...", WORLD_WIDTH / 2 - 100  , WORLD_HEIGHT / 2 - 10);
-        intro.drawString("Use the cursor to whack the mole", WORLD_WIDTH / 2 - 95, WORLD_HEIGHT / 2 + 10);
+        intro.drawString("Use the cursor to whack the mole", WORLD_WIDTH / 2 - 95, WORLD_HEIGHT / 2 + 10);*/
     }
     
     public void act()
@@ -39,4 +39,12 @@ public class IntroWorld extends World
         }
     }
     
+    private void createButtons()
+    {
+        GreenfootImage christmasButton = new GreenfootImage("ChristmasWorldButton.jpg");
+        GreenfootImage halloweenButton = new GreenfootImage("HalloweenWorldButton.jpg");
+        
+        addObject(new Button(2,christmasButton), 359,323);
+        addObject(new Button(3,halloweenButton), 138,323);
+    }
 }
