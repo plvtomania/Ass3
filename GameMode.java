@@ -17,7 +17,7 @@ public abstract class GameMode extends World
    
     private int zombieSpawnTime = 100;
     private int goldenSpawnTime = 655;
-    private int elfSpawnTime = 230;
+    private int elfSpawnTime = 210;
     
     private int expireTime;
     
@@ -86,60 +86,76 @@ public abstract class GameMode extends World
      */
     private void handleScore()
     {
-        if(game.getScore() <= 4)
+        if(game.getScore() <= 3)
         {
             game.setLevel(1);
             expireTime = 120;
             zombieSpawnTime = 100;
             goldenSpawnTime = 655;
-            elfSpawnTime = 230;
+            elfSpawnTime = 210;
         }
-        else if(game.getScore() >= 5 && game.getScore() <= 11)
+        else if(game.getScore() >= 4 && game.getScore() <= 9)
         {
             game.setLevel(2);
             expireTime = 110;
             zombieSpawnTime = 90;
-            goldenSpawnTime = 655;
-            elfSpawnTime = 200;
+            goldenSpawnTime = 630;
+            elfSpawnTime = 190;
         }
-        else if(game.getScore() >= 12 && game.getScore() <= 18)
+        else if(game.getScore() >= 10 && game.getScore() <= 15)
         {
             game.setLevel(3);
-            expireTime = 90;
+            expireTime = 100;
             zombieSpawnTime = 80;
-            goldenSpawnTime = 655;
+            goldenSpawnTime = 605;
             elfSpawnTime = 170;
         }
-        else if(game.getScore() >= 19 && game.getScore() <= 25)
+        else if(game.getScore() >= 16 && game.getScore() <= 22)
         {
             game.setLevel(4);
-            expireTime = 60;
+            expireTime = 90;
             zombieSpawnTime = 70;
-            goldenSpawnTime = 655;
-            elfSpawnTime = 140;
+            goldenSpawnTime = 580;
+            elfSpawnTime = 150;
         }
-        else if(game.getScore() >= 26 && game.getScore() <= 34)
+        else if(game.getScore() >= 23 && game.getScore() <= 29)
         {
             game.setLevel(5);
-            expireTime = 50;
+            expireTime = 80;
             zombieSpawnTime = 60;
-            goldenSpawnTime = 655;
-            elfSpawnTime = 110;
+            goldenSpawnTime = 555;
+            elfSpawnTime = 130;
         }
-        else if(game.getScore() >= 35 && game.getScore() <= 41)
+        else if(game.getScore() >= 30 && game.getScore() <= 37)
         {
             game.setLevel(6);
-            expireTime = 40;
+            expireTime = 70;
             zombieSpawnTime = 50;
-            goldenSpawnTime = 655;
-            elfSpawnTime = 80;
+            goldenSpawnTime = 530;
+            elfSpawnTime = 110;
         }
-        else if(game.getScore() >= 42 && game.getScore() <= 48)
+        else if(game.getScore() >= 38 && game.getScore() <= 45)
         {
             game.setLevel(7);
-            expireTime = 30;
-            zombieSpawnTime = 40;
-            goldenSpawnTime = 655;
+            expireTime = 65;
+            zombieSpawnTime = 30;
+            goldenSpawnTime = 505;
+            elfSpawnTime = 90;
+        }
+        else if(game.getScore() >= 46 && game.getScore() <= 54)
+        {
+            game.setLevel(8);
+            expireTime = 60;
+            zombieSpawnTime = 25;
+            goldenSpawnTime = 480;
+            elfSpawnTime = 70;
+        }
+        else if(game.getScore() >= 55 && game.getScore() <= 63)
+        {
+            game.setLevel(9);
+            expireTime = 40;
+            zombieSpawnTime = 20;
+            goldenSpawnTime = 555;
             elfSpawnTime = 50;
         }
     }
