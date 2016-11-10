@@ -89,7 +89,6 @@ public class ChristmasWorld extends World
         /*   private int zombieSpawnTime = 100;
          *  private int goldenSpawnTime = 655;
          *  private int elfSpawnTime = 230;*/
-        
     }
     
     /**
@@ -104,7 +103,6 @@ public class ChristmasWorld extends World
         {
             initialize();
             setPaintOrder(Hammer.class, Mole.class);
-            //addObject.zombie;
         }
         else
         {
@@ -236,8 +234,6 @@ public class ChristmasWorld extends World
         
         timeCounter = 0;
         createCoordinates();
-        
-       
     }
     
     /**
