@@ -214,7 +214,7 @@ public class ChristmasWorld extends World
     
     public boolean checkGameOver()
     {
-        if(game.getSeconds() >= 5)
+        if(game.getSeconds() >= 60)
         {
             return true;
         }
