@@ -8,7 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HalloweenWorld extends GameMode
 {
-
+    
+    private int health;
+    private int healthDropZombie;
+    
     /**
      * Constructor for objects of class HalloweenWorld.
      * 
@@ -33,11 +36,40 @@ public class HalloweenWorld extends GameMode
         {
             Greenfoot.setWorld(new IntroWorld());
         }
-        
+    }
+    
+    public void act()
+    {
+        super.act();
+        showText("" + game.getHealth(), 89, 43);
+        calculateHealth();
+    }
+    
+    public void calculateHealth()
+    {
+        game.setHealth(game.getHealth() + hammer.getHealthDrop() + healthDropZombie);
+        hammer.setHealthDrop(0);
+        healthDropZombie = 0;
+            
     }
     
     public boolean checkGameOver()
-    {
+    {           
+        if(game.getHealth()== 0)
+        {
+            return true;
+        }
+        
         return false;
+    }
+    
+    public void setHealthDropZombie(int value)
+    {
+        healthDropZombie = value;
+    }
+    
+    public int getHealthDropZombie()
+    {
+        return healthDropZombie;
     }
 }

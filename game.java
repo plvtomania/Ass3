@@ -9,14 +9,16 @@ public class game
     private int seconds;
     private int score;
     private int level;
+    private int health;
     
     /**
      * Constructor for objects of class game
      */
     public game()
     {
-        seconds = 0;
+        seconds = 60;
         level = 1;
+        health = 5;
     }
     
     /**
@@ -67,5 +69,14 @@ public class game
         level = value;
     }
     
+    public int getHealth()
+    {
+        return health;
+    }
+    
+    public void setHealth(int value)
+    {
+        health = value;
+    }
   
 }

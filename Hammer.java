@@ -12,6 +12,7 @@ public class Hammer extends Actor
     private GreenfootImage image2;
     private int actCount;
     private int score;
+    private int healthDrop;
     private GreenfootSound goodMole;
     private GreenfootSound badMole;
     
@@ -36,6 +37,7 @@ public class Hammer extends Actor
     public Hammer()
     {
         score = 0;
+        healthDrop = 0;
         image1 = new GreenfootImage("candycane.png");
         image2 = new GreenfootImage("candycaneblood.png");
         setImage(image1);
@@ -110,6 +112,12 @@ public class Hammer extends Actor
                badMole.play();
                
                score = score - 2;
+               
+               if(world instanceof HalloweenWorld)
+               {
+                   healthDrop = healthDrop - 1;
+               }
+               
            }
        }
         
@@ -120,6 +128,16 @@ public class Hammer extends Actor
     public int getScore()
     {
         return score;
+    }
+    
+    public int getHealthDrop()
+    {
+        return healthDrop;
+    }
+    
+    public void setHealthDrop(int value)
+    {
+        healthDrop = value;
     }
 }
 

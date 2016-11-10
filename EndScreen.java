@@ -38,9 +38,9 @@ public class EndScreen extends World
         //Button exitButton = ;
         //Button playAgainButton = new Button("Play");
         GreenfootImage quitimage = new GreenfootImage("quitbutton.jpg");
-        GreenfootImage playimage = new GreenfootImage("replaybutton.jpg");
+        //GreenfootImage playimage = new GreenfootImage("replaybutton.jpg");
         
         addObject(new Button(1,quitimage), 322,362);
-        addObject(new Button(2,playimage), 157,362);
+        //addObject(new Button(2,playimage), 157,362);
     }
 }

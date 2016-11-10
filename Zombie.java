@@ -18,6 +18,18 @@ public class Zombie extends Mole
     {
         // Makes it possible for the super class Mole.class to control the acts of Zombie.class.
        super.act();
+       if(expireTime  >= initExpireTime)
+        {
+            
+            if(getWorld() instanceof HalloweenWorld)
+            {
+                HalloweenWorld halloweenWorld = (HalloweenWorld) getWorld();
+                
+                halloweenWorld.setHealthDropZombie(halloweenWorld.getHealthDropZombie()-1);
+                
+            }  
+            selfDestruct();
+        }
        
     }
     

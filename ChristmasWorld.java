@@ -11,6 +11,8 @@ import java.awt.Color;
  */
 public class ChristmasWorld extends GameMode
 {
+    private int time;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -24,8 +26,14 @@ public class ChristmasWorld extends GameMode
     public void act()
     {
         super.act();
+        showText("Time " + game.getSeconds(), 89, 43);
+        if(super.timeCounter %60==0)
+        {
+            int seconds = game.getSeconds();
+            seconds--;
+            game.setSeconds(seconds);
+        }
     }
-    
     /**
      * Constructor for objects of class .
      */
@@ -52,7 +60,7 @@ public class ChristmasWorld extends GameMode
      */
     public boolean checkGameOver()
     {
-        if(super.game.getSeconds() >= 60)
+        if(game.getSeconds() <= 0)
         {
             return true;
         }

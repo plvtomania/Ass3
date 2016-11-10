@@ -15,6 +15,21 @@ public class GoldenZombie extends Mole
     public void act() 
     {
         super.act();
+        if(expireTime >= initExpireTime)
+        {
+            
+            if(getWorld() instanceof HalloweenWorld)
+            {
+                HalloweenWorld halloweenWorld = (HalloweenWorld) getWorld();
+                
+                halloweenWorld.setHealthDropZombie(halloweenWorld.getHealthDropZombie()-1);
+                
+            }
+            selfDestruct();
+
+            
+        }
+        
     }  
     
     /**

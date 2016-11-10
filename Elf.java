@@ -15,6 +15,12 @@ public class Elf extends Mole
     public void act() 
     {
         super.act();
+        if(expireTime >= initExpireTime)
+        {
+            selfDestruct();
+                
+        }
+        
     }
     
     /**

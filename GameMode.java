@@ -10,7 +10,7 @@ public abstract class GameMode extends World
 {
     private int row;
     private int column;
-    private int timeCounter;
+    protected int timeCounter;
 
     private String[] coordinates;
    
@@ -21,7 +21,7 @@ public abstract class GameMode extends World
     private int expireTime;
     
     protected game game;
-    private Hammer hammer;
+    protected Hammer hammer;
 
     /**
      * Constructor for objects of class GameMode.
@@ -46,12 +46,7 @@ public abstract class GameMode extends World
     {
         // this timer counts time in seconds.
         timeCounter++;
-        if(timeCounter %60==0)
-        {
-            int seconds = game.getSeconds();
-            seconds++;
-            game.setSeconds(seconds);
-        }
+        
         
         // Everytime the timer is equal to the zombieSpawnTime, a new zombie is spawned and a sound is played.
         if(checkGameOver())
@@ -83,7 +78,7 @@ public abstract class GameMode extends World
         }
         
         // Displays time, score and level on the set coordinates.
-        showText("Time " + game.getSeconds(), 89, 43);
+        
         showText("Score " + game.getScore(), 255, 43);
         showText("Level " + game.getLevel(), 400, 43);
         
@@ -207,9 +202,10 @@ public abstract class GameMode extends World
         hammer = new Hammer();
         addObject(hammer, 1,1);
         
+        timeCounter = 0;
         expireTime = 120;
         
-        timeCounter = 0;
+        
         createCoordinates();
     }
     
