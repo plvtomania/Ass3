@@ -35,7 +35,7 @@ public class IntroWorld extends World
         }
         if (key != null && key.equals("space"))
         {
-            Greenfoot.setWorld(new ChristmasWorld(true));
+            Greenfoot.setWorld(new HalloweenWorld(true));
         }
     }
     
