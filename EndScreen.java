@@ -37,9 +37,9 @@ public class EndScreen extends World
     /**
      * Creates a quit button on the screen.
      */
-    private void createButtons()
+    private void createButtons() 
     {
-        GreenfootImage quitimage = new GreenfootImage("QuitButton.jpg");
+        GreenfootImage quitimage = new GreenfootImage("quitbutton.jpg");
 
         addObject(new Button(1,quitimage), 245,355);
     }
