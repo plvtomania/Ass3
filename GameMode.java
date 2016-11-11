@@ -174,7 +174,7 @@ public abstract class GameMode extends World
             coordinates = getRandomCoordinate();
             x++;
         }
-        
+            
         addObject(object, coordinates[0], coordinates[1]);
     }
     
